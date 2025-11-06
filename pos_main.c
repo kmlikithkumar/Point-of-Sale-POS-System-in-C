@@ -1,10 +1,12 @@
 #include "pos.h"
+#include <stdbool.h>
 
 int main() {
     BSTNode *inventory = NULL;
     inventory = seedInventory(inventory);
+    bool flag=true;
 
-    while (1) {
+    while (flag) {
         printf("\n===== POS SIMULATOR =====\n");
         printf("1. Add product to inventory\n");
         printf("2. Display inventory\n");
@@ -38,7 +40,11 @@ int main() {
                 printf("Exiting... Goodbye!\n");
                 return 0;
             default:
-                printf("Invalid option. Try again.\n");
+                printf("Invalid option. Try again.\n");  
+                flag=false;
+                break;
+            
         }
     }
 }
+
